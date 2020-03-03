@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h3 class="text-light">Tick Tock</h3>
+        <div class="btn-group btn-group-toggle float-right">
+            <button class="btn btn-success active"><i class="far fa-clock pr-1"></i>Clock</button>
+            <button class="btn btn-success"><i class="far fa-bell pr-1"></i>Alarm</button>
+            <button class="btn btn-success"><i class="fas fa-hourglass-end pr-1"></i>Timer</button>
+            <button class="btn btn-success"><i class="fas fa-stopwatch pr-1"></i>Stopwatch</button>
+        </div>
+    </nav>
+
+    <div class="container mt-5 w-50 text-light">
+        <div class="card card-body mx-auto">
+            <h1 id="time" class="text-center">04:30 PM</h1>
+            <h3 id="date" class="text-center">Tue, 3 March</h3>
+            <br>
+            <div class="input-group mx-auto">
+                  <input type="text" class="form-control" placeholder="Search location">
+                  <div class="input-group-prepend">
+                    <button class="input-group-text" id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
