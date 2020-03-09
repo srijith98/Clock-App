@@ -6,32 +6,63 @@
     <title>Clock</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <div class="container"  style="position: relative; min-height: 100vh;">
+    <nav class="navbar navbar-dark bg-dark p-3">
         <h3 class="text-light">Tick Tock</h3>
-        <div class="btn-group btn-group-toggle float-right">
-            <button class="btn btn-success active"><i class="far fa-clock pr-1"></i>Clock</button>
-            <button class="btn btn-success"><i class="far fa-bell pr-1"></i>Alarm</button>
-            <button class="btn btn-success"><i class="fas fa-hourglass-end pr-1"></i>Timer</button>
-            <button class="btn btn-success"><i class="fas fa-stopwatch pr-1"></i>Stopwatch</button>
+        <div class="btn-group btn-group-toggle float-right nav-btns">
+            <button class="btn btn-success btn-clock active"><i class="far fa-clock pr-1"></i>Clock</button>
+            <button class="btn btn-success btn-alarm"><i class="far fa-bell pr-1"></i>Alarm</button>
+            <button class="btn btn-success btn-timer"><i class="fas fa-hourglass-end pr-1"></i>Timer</button>
+            <button class="btn btn-success btn-stopwatch"><i class="fas fa-stopwatch pr-1"></i>Stopwatch</button>
         </div>
     </nav>
 
-    <div class="container mt-5 w-50 text-light">
-        <div class="card card-body mx-auto">
-            <h1 id="time" class="text-center">04:30 PM</h1>
-            <h3 id="date" class="text-center">Tue, 3 March</h3>
+    <div class="container container-card mt-5 w-50 text-light" style="padding-bottom: 5rem;">
+        <div class="card card-body mx-auto time-card">
+            <p id="time" class="text-center mb-0" style="font-size: 75px;">04:30 <span style="font-size: 30px;">PM</span></p>
+            <p id="date" class="text-center text-secondary" style="font-size: 30px;">Tue, 3 March</p>
             <br>
-            <div class="input-group mx-auto">
-                  <input type="text" class="form-control" placeholder="Search location">
-                  <div class="input-group-prepend">
-                    <button class="input-group-text" id="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
+            <button class="btn btn-success btn-lg w-75 mx-auto" id="search-btn"><i class="fas fa-globe pr-1"></i>Search any TimeZone</button>
+            <div class="search-div"></div>
+            <div class="results-div"></div>
         </div>
     </div>
 
+    <!-- Alarm modal -->
+    <div class="modal fade" id="alarmRingModal" tabindex="-1" role="dialog" aria-labelledby="alarmRingTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alarmRingTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div style="padding-top:90.833%;position:relative;">
+                    <iframe src="https://gifer.com/embed/4jET" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success dismiss" data-dismiss="modal">Dismiss</button>
+              <button type="button" class="btn btn-outline-success snooze">Snooze</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <footer class="footer text-center bg-dark w-100 pt-3 mt-3" style="position: absolute;bottom: 0;height: 3rem;">Tick Tock &copy;</footer>
+    </div>  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="easyHttp3.js"></script>
+    <script src="time.js"></script>
+    <script src="ui.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
