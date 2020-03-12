@@ -1,6 +1,6 @@
 class Time {
     constructor() {
-        this.key = '5dcea472eb83941549035e61731d7731';
+        this.key = '';
     }
 
     getCurrentTime() {
