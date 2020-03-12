@@ -180,6 +180,10 @@ function alarmOnOffClicked(e) {
         id = e.target.parentElement.parentElement.dataset.id;
         ls.removeAlarm(id);
         e.target.parentElement.parentElement.remove();
+    } else if(e.target.parentElement.classList.contains('delete-alarm')) {
+        id = e.target.parentElement.parentElement.parentElement.dataset.id;
+        ls.removeAlarm(id);
+        e.target.parentElement.parentElement.parentElement.remove();
     }
 }
 
